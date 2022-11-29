@@ -11,6 +11,7 @@ app.get('/', (req, res)=> {
     res.render("home")
 })
 
+
 // KEEP THIS AT THE BOTTOM! (catch-all route)
 app.get('*', (req, res) => {
     res.render('error404')
