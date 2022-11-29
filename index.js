@@ -13,6 +13,6 @@ app.get('/', (req, res)=> {
 
 // KEEP THIS AT THE BOTTOM! (catch-all route)
 app.get('*', (req, res) => {
-    res.send('404 Page')
+    res.render('error404')
 })
 app.listen(process.env.PORT)
