@@ -2,3 +2,9 @@ h1 {
     text-align: center;
     color:aqua;
 }
+img {
+    height: 200px;
+    width: 300px;
+    margin: auto;
+    display: inline-block;
+}
