@@ -5,7 +5,7 @@ router.get('/new', (req, res) => {
     res.render('places/new')
   })
   
-
+// INDEX ROUTE
 router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
@@ -25,6 +25,7 @@ router.post('/', (req, res) => {
     res.redirect('/places')
   }) 
   
+//   SHOW ROUTE
   router.get('/:id', (req, res) => {
     let id = Number(req.params.id)
     if (isNaN(id)) {
@@ -34,10 +35,11 @@ router.post('/', (req, res) => {
         res.render('error404')
     }
     else {
-    res.render('places/show', { place: places[id] })
+    res.render('places/show', { place: places[id], id })
     }
   })
 
+//   DELETE ROUTE
   router.delete('/:id', (req, res) => {
     let id = Number(req.params.id)
     if (isNaN(id)) {
@@ -48,7 +50,7 @@ router.post('/', (req, res) => {
         }
         else {
             places.splice(id, 1)
-            res.redirect('/places')
+            res.send('STUB DELETE places/:id')
         }
   })
 
