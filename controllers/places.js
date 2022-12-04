@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
         }
         else {
             places.splice(id, 1)
-            res.send('STUB DELETE places/:id')
+           res.redirect('/places')
         }
   })
 
