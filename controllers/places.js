@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { Eraser } = require('react-bootstrap-icons')
 const db = require('../models')
 
 
@@ -56,7 +57,14 @@ router.delete('/:id/rant/:rantId', (req, res) => {
   
 //   SHOW ROUTE
   router.get('/:id', (req, res) => {
-    res.send('GET /places/:id stub')
+    db.Place.findById(req.params.id)
+    .then(place => {
+      res.render('places/show', { place })
+    })
+    .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+    })
   })
 
 module.exports = router
