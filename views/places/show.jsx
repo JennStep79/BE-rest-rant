@@ -12,6 +12,9 @@ function show (data) {
                 <h3>
                     Located in {data.place.city}, {data.place.state}
                 </h3>
+                <h3>
+                    {data.place.showEstablished()}
+                </h3>
                 <h4>
                     Serving {data.place.cuisines}
                 </h4>
