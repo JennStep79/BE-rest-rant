@@ -19,7 +19,7 @@ function show (data) {
                     Serving {data.place.cuisines}
                 </h4>
                 <div>   
-                    <img src={data.place.pic} alt={data.place.name} />
+                    <img src= {data.place.pic} alt={data.place.name} />
                 </div> 
                 <h2>Rating</h2>
                     <p>currently unrated</p>

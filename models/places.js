@@ -3,11 +3,11 @@ const placeSchema = new mongoose.Schema({
     name: { type: String, required: true },
     pic: {
         type: String,
-        default: 'http://placekitten.com/350/350'
+        defaultValue: 'http://www.placekitten.com/350/350'
     },
     cuisines: { type: String, required: true },
-    city: { type: String, default: 'Anytown' },
-    state: { type: String, default: 'USA' },
+    city: { type: String, defaultValue: 'Anytown' },
+    state: { type: String, defaultValue: 'USA' },
     founded: {
         type: Number,
         min: [1673, 'Surely not that old?!'],
