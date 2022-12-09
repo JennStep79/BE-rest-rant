@@ -7,7 +7,21 @@ function show (data) {
             No comments yet!
         </h3>
     )
+    let rating = (
+        <h3 className='inactive'>
+            Not yet rated
+        </h3>
+    )
     if (data.place.comments.length) {
+        let sumRatings = data.place.comments.reduce((tot, c) => {
+            return tot + c.stars
+        }, 0)
+        let averageRating = sumRatings / data.place.comments.length
+        rating = (
+            <h3>
+                {Math.round(averageRating)} stars
+            </h3>
+        )
         comments = data.place.comments.map(c => {
             return (
                 <div className='border col-sm-4'>
@@ -50,7 +64,7 @@ function show (data) {
                 </form>
                 <hr />
                 <h2>Rating</h2>
-                    <p>currently unrated</p> 
+                    <p>{rating}</p> 
             </div>
             <h2>Comments</h2>
                 <div className='row'>
