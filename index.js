@@ -1,4 +1,5 @@
 require('dotenv').config()
+const PORT = process.env.PORT
 const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
@@ -23,4 +24,6 @@ app.get('/', (req, res)=> {
 app.get('*', (req, res) => {
     res.render('error404')
 })
-app.listen(process.env.PORT)
+app.listen(PORT, () => console.log(`Server is running on ${PORT}`))
+
+module.exports = app
